@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Treehouse - React Image Gallery
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this project, you'll build an image gallery using React and the Flickr API. After creating the project with create-react-app, you will build the gallery components, add to the supplied CSS and set up routing.
 
-## Available Scripts
+## Instructions
 
-In the project directory, you can run:
+### 1. Set up your project with create-react-app
 
-### `yarn start`
+### 2. Build your app components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Most components should be stateless functional components that focus on the UI rather than behavior. Here's some examples of the sorts of components you’ll need:
+  - A Container component that takes in a keyword and api key as props, and fetches the photos and other required information from the API
+  - A Header component, maybe for storing the nav and search
+  - A Navigation menu component
+  - A Form component for the search
+  - A Gallery component that can be reused to display the sets of images for each category you wish to display. For example, Sunsets, Flowers, and Waterfalls.
+  - And you can even use a components for your list items and/or your individual images.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 3. CSS styles
 
-### `yarn test`
+- Update the CSS to style the app in a way that resembles the mockups.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  **Note:** Remember, the mockups are just a general guide for how the elements should be arranged and positioned on the page. But other than general arrangement, spacing and positioning, you are free get creative with color and other cool CSS embellishments like shadows, transitions, fonts, etc.
 
-### `yarn build`
+### 4. Routes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Install React Router and set up your `<Route>` and `<Link>` or `<NavLink>` components.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Clicking a nav link should navigate the user to the correct route and load new data.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- URLs should correctly match the Routes.
 
-### `yarn eject`
+### 5. Get a Flickr API key - Create yahoo account/use tumblr account to sign in.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Apply for non-commercial API key https://www.flickr.com/services/apps/create/apply/.
+- You’ll need to set up a config.js file in your project that imports your API key into your application so that you and other users can request data from the Flickr API.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- The config.js file should look something like this:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+  ```
+  const apiKey = 'YOUR API KEY';
+  export default apiKey;
+  ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Import your API key into your application and save it to a variable like you would any other module, and use the variable where applicable. That way, your app’s users will only need to enter in an API key once.
 
-## Learn More
+**Important Note:** This config.js file must be listed in the .gitignore file so it won’t be committed to your github repository. This will prevent your keys and tokens from getting posted publicly to GitHub. It is very important that you do NOT upload any of your personal API keys / secrets / passwords to Github or other publicly accessible place. When you submit this project for grading, your project reviewer will create their own config.js file and use their own API key to run the project.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 6. Requesting the data
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Fetch the data from the Flickr API.
 
-### Code Splitting
+- Make sure data fetching and state is managed by a higher-level “container” component.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- It is recommended the you use the following link for help with this part of the project, https://www.flickr.com/services/api/explore/flickr.photos.search.
+  - Enter a tag to search for, such as “sunsets.”
+  - You may also want to limit the number of results using the per_page argument.
+  - Choose JSON as the output, then “Do not sign call.”
+  - Click “Call Method...” At the bottom of the page, and you’ll see an example of the API call you’ll need to make. You can click on the URL to see what the response will look like.
 
-### Analyzing the Bundle Size
+### 7. Displaying the data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Make sure each image gets a unique "key" prop.
+- There should be no console warnings regarding unique "key" props.
+- The title of each image list should be displayed dynamically via "props".
+- The URL should match the route.
 
-### Making a Progressive Web App
+### 8. Search
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Add search field feature to search for new categories of images.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 9. Before you submit your project for review, make sure you can check off all of the items on the **[Student Project Submission Checklist]** (http://treehouse-techdegree.s3.amazonaws.com/Student-Project-Submission-Checklist.pdf). The checklist is designed to help you make sure you’ve met the grading requirements and that your project is complete and ready to be submitted!
