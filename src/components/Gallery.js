@@ -6,7 +6,7 @@ const Gallery = (props) => {
   let imageList;
   if (props.images.length > 0) {
     imageList = props.images.map((item) => {
-      return <ListItem source={item.src} key={item.id} />;
+      return <ListItem data={item} key={item.id} />;
     });
   } else {
     imageList = <NotFoundItem />;
@@ -20,3 +20,13 @@ const Gallery = (props) => {
 };
 
 export default Gallery;
+
+// farm: 66
+// id: "50653265716"
+// isfamily: 0
+// isfriend: 0
+// ispublic: 1
+// owner: "191175612@N05"
+// secret: "aa5bb85818"
+// server: "65535"
+// title: "The Sky"
