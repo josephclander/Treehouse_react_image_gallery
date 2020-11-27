@@ -10,10 +10,10 @@ class App extends Component {
   };
 
   componentDidMount() {
-    this.searchFlickr('sky');
+    this.searchFlickr();
   }
 
-  searchFlickr = (query) => {
+  searchFlickr = (query = 'cats') => {
     axios
       .get(
         `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${query}&per_page=16&page=1&format=json&nojsoncallback=1`
@@ -31,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className='container'>
-        <Header />
+        <Header search={this.searchFlickr} />
         <Gallery images={this.state.imageData} />
       </div>
     );
