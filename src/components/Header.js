@@ -1,10 +1,12 @@
 import React from 'react';
+import Form from './Form';
+import Nav from './Nav';
 
 const Header = () => {
   return (
     <div className='header'>
-      <div className='search-form'>Search Bar</div>
-      <div className='main-nav'>Main Nav</div>
+      <Form />
+      <Nav />
     </div>
   );
 };
