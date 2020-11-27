@@ -70,3 +70,11 @@ In this project, you'll build an image gallery using React and the Flickr API. A
 - Add search field feature to search for new categories of images.
 
 ### 9. Before you submit your project for review, make sure you can check off all of the items on the **[Student Project Submission Checklist]** (http://treehouse-techdegree.s3.amazonaws.com/Student-Project-Submission-Checklist.pdf). The checklist is designed to help you make sure you’ve met the grading requirements and that your project is complete and ready to be submitted!
+
+## Extra Credit
+
+### 1. Add a loading indicator that displays each time the app fetches new data.
+
+### 2. Include a 404-like error route that displays when a URL path does not match a route.
+
+### 3. If no matches are found by the search, include a message to tell the user there are no matches.
