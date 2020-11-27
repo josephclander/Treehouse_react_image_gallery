@@ -7,6 +7,7 @@ import apiKey from './config';
 class App extends Component {
   state = {
     imageData: [],
+    loading: true,
   };
 
   componentDidMount() {
@@ -21,6 +22,7 @@ class App extends Component {
       .then((data) =>
         this.setState({
           imageData: data.data.photos.photo,
+          loading: false,
         })
       )
       .catch((error) => {
@@ -32,7 +34,11 @@ class App extends Component {
     return (
       <div className='container'>
         <Header search={this.searchFlickr} />
-        <Gallery images={this.state.imageData} />
+        {this.state.loading ? (
+          <h2>Loading...</h2>
+        ) : (
+          <Gallery images={this.state.imageData} />
+        )}
       </div>
     );
   }
