@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import Header from './components/Header';
 import Gallery from './components/Gallery';
+import apiKey from './config';
 
 class App extends Component {
   state = {
@@ -24,7 +26,19 @@ class App extends Component {
     ],
   };
 
+  searchFlickr = (query) => {
+    axios
+      .get(
+        `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${query}&per_page=16&page=1&format=json&nojsoncallback=1`
+      )
+      .then((data) => console.log(data.data.photos.photo))
+      .catch((error) => {
+        console.log('Error fetching and parsing data', error);
+      });
+  };
+
   render() {
+    this.searchFlickr('sky');
     return (
       <div className='container'>
         <Header />
