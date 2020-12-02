@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Form extends Component {
   searchInput = React.createRef();
 
   submitHandler = (e) => {
     e.preventDefault();
-    this.props.onSearch(this.searchInput.current.value);
+    const query = this.searchInput.current.value;
+    const path = `/search/${query}`;
+    this.props.history.push(path);
     e.currentTarget.reset();
   };
 
@@ -35,4 +38,4 @@ class Form extends Component {
   }
 }
 
-export default Form;
+export default withRouter(Form);
