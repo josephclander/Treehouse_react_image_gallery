@@ -43,7 +43,8 @@ input {
   width: 100%;
   margin-bottom: 1em;
 }
-.main-nav a {
+.main-nav a,
+.home {
   display: block;
   background: #438bbd;
   border-radius: 3px;
@@ -53,8 +54,20 @@ input {
 }
 .main-nav .active,
 .main-nav a:hover,
+.home:hover,
 .search-form button:hover {
   background-color: #275270;
+}
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.page-not-found img {
+  transform: translateY(-100px) rotate(5deg);
+  opacity: 0.3;
+  z-index: -1;
 }
 .photo-container ul {
   display: flex;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import PageNotFound from './components/PageNotFound';
 
 import Container from './components/Container';
 
@@ -13,6 +14,7 @@ const App = () => {
             path='/search/:text'
             render={(props) => <Container {...props} />}
           />
+          <Route component={PageNotFound} />
         </Switch>
       </div>
     </BrowserRouter>
