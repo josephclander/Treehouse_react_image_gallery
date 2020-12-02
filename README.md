@@ -2,7 +2,7 @@
 
 In this project, you'll build an image gallery using React and the Flickr API. After creating the project with create-react-app, you will build the gallery components, add to the supplied CSS and set up routing.
 
-## Instructions
+# Instructions
 
 ### 1. Set up your project with create-react-app
 
@@ -73,8 +73,31 @@ In this project, you'll build an image gallery using React and the Flickr API. A
 
 ## Extra Credit
 
-### 1. Add a loading indicator that displays each time the app fetches new data.
+1.  Add a loading indicator that displays each time the app fetches new data.
 
-### 2. Include a 404-like error route that displays when a URL path does not match a route.
+2.  Include a 404-like error route that displays when a URL path does not match a route.
 
-### 3. If no matches are found by the search, include a message to tell the user there are no matches.
+3.  If no matches are found by the search, include a message to tell the user there are no matches.
+
+# Viewing the App
+
+To view the app you will need to:
+
+- Download the files
+- Apply for a non-commercial API key from Flickr https://www.flickr.com/services/apps/create/apply/.
+- Then use this to set up a config.js file as below:
+  ```
+  const apiKey = 'YOUR API KEY';
+  export default apiKey;
+  ```
+- Store this file in the `src` folder of the project
+- Then run `npm install` to import the node modules
+- `npm start` or `yarn start` to run
+
+# Notes from the Build
+
+This project has been run on 3 different browsers for testing: Chrome 87, Safari 14.0.1 and Firefox 84.0b7 with no issues found.
+
+While I have the project working, there are certain aspects that were hard to overcome and I am not sure it fully meets the philosophy of React App. I built the project out from creating the components, applying the Flickr API before adding the routing functionality. I believe you use React to get a smoother experience by cutting down on the amount of times components on the page are rendered.
+
+The problem I came across is that I couldn't find a way to strucure the routes so that the searchbar could receive the params from the url and **NOT** need to be re-rendered. In fact to access the match.params at all I had to look beyond the scope of the course and use `withRouter` alongside `componentDidUpdate`. Due to this I believe there must be a more efficient manner to build the app and would appreciate any feedback in this regard.
