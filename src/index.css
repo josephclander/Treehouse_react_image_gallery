@@ -77,6 +77,7 @@ input {
   transform: scale(1.65);
 }
 .photo-container .not-found {
+  background-color: #fff;
   width: 100%;
 }
 

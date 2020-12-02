@@ -38,6 +38,7 @@ class Container extends Component {
         this.setState({
           imageData: data.data.photos.photo,
           loading: false,
+          title: query,
         })
       )
       .catch((error) => {
@@ -53,7 +54,7 @@ class Container extends Component {
         {this.state.loading ? (
           <h2>Loading...</h2>
         ) : (
-          <Gallery images={this.state.imageData} />
+          <Gallery images={this.state.imageData} title={this.state.title} />
         )}
       </>
     );
