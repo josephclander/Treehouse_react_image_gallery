@@ -27,6 +27,7 @@ a {
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 input {
   font-size: 1em;
@@ -46,8 +47,9 @@ input {
   display: block;
   background: #438bbd;
   border-radius: 3px;
-  padding: 5px;
+  padding: 10px;
   color: #fff;
+  transition: background-color 0.3s;
 }
 .main-nav .active,
 .main-nav a:hover,
